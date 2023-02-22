@@ -1,4 +1,6 @@
-public class LineComparison {
+
+
+public class LineComparison implements Comparable<LineComparison>{
 
     int x1;
     int y1;
@@ -25,6 +27,11 @@ public class LineComparison {
         return this.length==line.length;
     }
 
+    @Override
+    public int compareTo(LineComparison o) {
+        return this.length-o.length;
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome To Line Comparison Computation Program");
         LineComparison line1 = new LineComparison();
@@ -41,5 +48,14 @@ public class LineComparison {
             System.out.println("Both lines are equal");
         else
             System.out.println("Both lines are not equal");
+
+        //comparing line1 and line2
+        int checkComparison=line1.compareTo(line2);
+        if(checkComparison==0)
+            System.out.println("both lines are equal");
+        else if(checkComparison<0)
+            System.out.println("line1 is smaller than line2");
+        else
+            System.out.println("line1 is greater than  line2");
     }
 }
