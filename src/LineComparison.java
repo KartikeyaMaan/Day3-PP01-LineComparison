@@ -57,5 +57,6 @@ public class LineComparison implements Comparable<LineComparison>{
             System.out.println("line1 is smaller than line2");
         else
             System.out.println("line1 is greater than  line2");
+
     }
 }
